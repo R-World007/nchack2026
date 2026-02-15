@@ -48,12 +48,15 @@ export default function Home() {
         const errJson = await aiResponse.json().catch(() => ({}));
         throw new Error(errJson?.error || "Failed to get AI score");
       }
-      const aiData = await aiResponse.json();
+      //const aiData = await aiResponse.json();
+      const scoreResp = await fetch(`/api/score?coin=${coin.id}`);
+      const scoreData = await scoreResp.json();
+
 
       // merge
       setResult({
         ...coin,
-        bigscore: aiData, // 放在 bigscore 裡比較乾淨
+        bigscore: scoreData, // 放在 bigscore 裡比較乾淨
       });
       setLoading(false);
 

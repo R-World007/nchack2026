@@ -3,6 +3,9 @@ import os
 import sys, json
 from backboard import BackboardClient
 
+
+
+
 # assistant_id 
 MARKET_AGENT_ID  = "c6f2a81d-0e64-4d51-a20b-66d7a44d4550"
 DEV_AGENT_ID     = "a35a0029-9334-4a17-a7ac-691002631e08"
@@ -29,7 +32,7 @@ def extract_json(text: str) -> dict:
 
 async def get_context_for_ai(coin_name: str) -> dict:
     proc = await asyncio.create_subprocess_exec(
-        "node", "scripts/get_context.js", coin_name,
+        "node", "backboard/scripts/get_context.js", coin_name,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
     )
@@ -39,14 +42,14 @@ async def get_context_for_ai(coin_name: str) -> dict:
     err = err_b.decode("utf-8", errors="replace").strip()
 
     # debug：stderr 印出來 OK（因為你把 logs 都改到 stderr 了）
-    if err:
-        print("[node stderr]\n", err)
-        print("[node stderr] ...", file=sys.stderr)
+    #if err:
+    #    print("[node stderr]\n", err)
+    #    print("[node stderr] ...", file=sys.stderr)
 
 
     # debug：stdout 不要整坨印，改印長度 + 前 200 chars 就好
-    print("[node stdout length]", len(out))
-    print("[node stdout head]", out[:200])
+    #print("[node stdout length]", len(out))
+    #print("[node stdout head]", out[:200])
 
     return json.loads(out)
 
@@ -165,8 +168,8 @@ async def main():
         ask_agent(client, DEV_AGENT_ID, prompt_dev(contextForAI)),
         ask_agent(client, ONCHAIN_AGENT_ID, prompt_onchain(contextForAI)),
     )
-    print("types:", type(market), type(dev), type(onchain))
-    print("market raw keys:", list(market.keys())[:10])
+    #print("types:", type(market), type(dev), type(onchain))
+    #print("market raw keys:", list(market.keys())[:10])
 
 
     # weights

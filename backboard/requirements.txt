@@ -2,4 +2,5 @@ requests
 backboard-sdk
 asyncio
 os
-sys
+pathlib
+subprocess
