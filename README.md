@@ -1,64 +1,6 @@
 # HackNCState 2026 - Crypto Reliability Tracker
 
 A Multi-AI agents analyze platform that analyzes and scores cryptocurrencies based on reliability, risk level, and project transparency to help users make smarter investment decisions.
-
-Gordon Ramsay
-gordonramsay0188
-Invisible
-
-Sai-happy-Sai — 上午11:22
-🎤 How to Explain This Workflow Slide
-🟢 Step 1: Data Sources
-
-“First, we collect real-time cryptocurrency data from external APIs such as CoinGecko and Alchemy.
-
-CoinGecko provides market-related data like price, volume, and market cap.
-Alchemy provides on-chain blockchain data.”
-
-🟢 Step 2: Data Extraction & Cleaning
-
-“Next, we extract and clean the data.
-
-Since the raw API data can be large and unstructured, we filter only the relevant metrics needed for analysis. This ensures consistency before passing it to our AI agents.”
-
-🟢 Step 3: AI Agent Layer
-
-“Then, the cleaned data is sent to multiple specialized agents:
-
-Market Agent — analyzes market performance metrics.
-
-Dev Agent — evaluates development-related indicators.
-
-On-chain Agent — examines blockchain activity and on-chain signals.
-
-Each agent focuses on a specific dimension of the coin’s health.”
-
-🟢 Step 4: Orchestrator
-
-“The orchestrator combines the outputs from all agents.
-
-It aggregates their evaluations and calculates a final composite score.”
-
-🟢 Step 5: Score Report
-
-“Finally, the system generates a score report that users can see in the frontend interface.
-
-This simplifies complex crypto metrics into one clear, actionable score.”
-Sai-happy-Sai — 下午2:27
-Yoo I need u
-Gordon Ramsay — 下午3:30
-## What It Does
-
-**Rug-Pull Sleuth** performs deep analysis on any cryptocurrency to assess fraud risk by examining:
-
-- **Market Integrity** (25% weight)
-  - Price history and volatility patterns
-Expand
-message.txt
-7 KB
-﻿
-Sai-happy-Sai
-saihappysai
  
 ## What It Does
 
@@ -299,4 +241,5 @@ This results in "API key is required" errors.
 MIT
 message.txt
 7 KB
+
 
