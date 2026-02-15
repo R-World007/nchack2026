@@ -2,7 +2,6 @@ requests
 backboard-sdk
 asyncio
 pathlib
-subprocess
 flask
 backboard
 requests
