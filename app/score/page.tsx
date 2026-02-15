@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import Link from "next/link";
 
 type SearchParams = { coin?: string };
 
@@ -18,7 +19,7 @@ export default async function ScorePage(props: {
 
   if (!coin) {
     return (
-      <main className="flex items-center justify-center min-h-screen bg-[#050507] text-gray-100">
+      <main className="flex items-center justify-center min-h-screen text-gray-100">
         <div className="w-full max-w-md text-center">
           <h1 className="text-2xl font-bold mb-4">No coin specified</h1>
           <p className="text-gray-400">
@@ -59,8 +60,33 @@ export default async function ScorePage(props: {
   }
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-[#050507] text-gray-100">
+    <main className="flex items-center justify-center min-h-screen text-gray-100 py-8">
       <div className="w-full max-w-md text-left">
+        {/* Search Bar */}
+        <div className="mb-6">
+          <Link
+            href="/"
+            className="inline-block mb-4 text-amber-300 hover:text-amber-400 text-sm"
+          >
+            ← Back to Search
+          </Link>
+          <form method="get" action="/score" className="flex">
+            <input
+              type="text"
+              name="coin"
+              placeholder="Enter coin name"
+              defaultValue={coin}
+              className="p-3 rounded-l-md flex-1 bg-[#0b0b0d] text-gray-100 border border-gray-800 focus:outline-none focus:border-amber-300"
+            />
+            <button
+              type="submit"
+              className="px-5 rounded-r-md font-bold bg-amber-600 text-black hover:bg-amber-500 shadow-md"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+
         {coinData ? (
           <div className="bg-[#0b0b0d] p-6 rounded-xl shadow-lg border border-gray-800">
             <h2 className="text-2xl font-bold mb-2 text-amber-300">

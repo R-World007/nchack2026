@@ -54,7 +54,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-[#050507] text-gray-100">
+    <main className="flex items-center justify-center min-h-screen text-gray-100">
       <div className="w-full max-w-md text-center">
         <h1 className="text-4xl font-bold mb-2 text-amber-300 drop-shadow-lg">
           Crypto Reliability Tracker
